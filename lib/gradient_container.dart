@@ -18,6 +18,9 @@ class GradientContainer extends StatelessWidget {
       : color1 = Colors.deepPurple,
         color2 = Colors.indigo;
 
+  // Function to roll dice
+  void rollDice() {}
+
   @override
   Widget build(context) {
     return Container(
@@ -29,8 +32,32 @@ class GradientContainer extends StatelessWidget {
         ),
       ),
       child: Center(
-        child: Image.asset('assets/images/dice-1.png'),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Image.asset(
+              'assets/images/dice-2.png',
+              // width: 200,
+              // I choose to use scale instead
+              scale: 3,
+            ),
+            const SizedBox(height: 20),
+            TextButton(
+              onPressed: rollDice,
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.white,
+                textStyle: const TextStyle(fontSize: 28),
+              ),
+              child: const Text('Roll Dice'),
+            )
+          ],
+        ),
       ),
     );
   }
 }
+
+// Buttons 
+// 1- elevatedButton
+// 2- outlinedButton
+// 3- textButton
